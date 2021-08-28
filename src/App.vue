@@ -1,15 +1,18 @@
 <template>
   <div id="app">
     <Navigation />
+    <Footer />
   </div>
 </template>
 
 <script>
 import Navigation from './components/Navigation';
+import Footer from './components/Footer.vue'
 export default {
   name: 'App',
   components: {
-    Navigation
+    Navigation,
+    Footer
   }
 }
 </script>
@@ -20,6 +23,11 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+#app{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 .container {
   max-width: 1440px;
