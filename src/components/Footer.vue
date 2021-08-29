@@ -3,7 +3,7 @@
         <div class="container">
             <div class="left">
                 <div class="col-1">
-                    <router-link class="header" :to="{name: 'Home'}">Blogs</router-link>
+                    <router-link class="header" :to="{name: 'Home'}">Travel Blogs</router-link>
                     <ul>
                         <li><a href="#"><youtube class="svg-icon" /></a></li>
                         <li><a href="#"><instagram class="svg-icon" /></a></li>
@@ -14,13 +14,14 @@
                 <div class="col-2">
                     <ul>
                         <router-link class="link" :to="{name: 'Home'}">Home</router-link>
-                        <router-link class="link" :to="{name: 'blogs'}">Blogs</router-link>
+                        <router-link class="link" :to="{name: 'Blogs'}">Blogs</router-link>
                         <router-link class="link" v-if="user" :to="{name: 'newpost'}">Post</router-link>
                         <router-link class="link" v-if="!user" :to="{name: 'login'}">Login/Register</router-link>
                     </ul>
                 </div>
             </div>
             <div class="right">
+                <p>Image Source - Unsplash</p>
                 <p>Copyright All Reserved</p>
             </div>
         </div>
