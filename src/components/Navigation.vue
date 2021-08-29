@@ -2,12 +2,12 @@
     <header>
         <nav class="container">
             <div class="branding">
-                <router-link class="header" :to="{name: 'Home'}">Blogs</router-link>
+                <router-link class="header" :to="{name: 'Home'}">Travel Blogs</router-link>
             </div>
             <div class="nav-links">
                 <ul v-show="!mobile">
-                    <router-link class="link" to="#">Home</router-link>
-                    <router-link class="link" to="#">Blogs</router-link>
+                    <router-link class="link" :to="{name: 'Home'}">Home</router-link>
+                    <router-link class="link" :to="{name: 'Blogs'}">Blogs</router-link>
                     <router-link class="link" to="#">Post</router-link>
                     <router-link class="link" to="#">Login/Register</router-link>
                 </ul>
@@ -16,8 +16,8 @@
         <headerMore @click="toggleMobileNav" class="header-more" v-show="mobile"/>
         <transition name="mobile-nav">
             <ul class="mobile-nav" v-show="mobileNav">
-                <router-link class="link" to="#">Home</router-link>
-                <router-link class="link" to="#">Blogs</router-link>
+                <router-link class="link" :to="{name: 'Home'}">Home</router-link>
+                <router-link class="link" :to="{name: 'Blogs'}">Blogs</router-link>
                 <router-link class="link" to="#">Post</router-link>
                 <router-link class="link" to="#">Login/Register</router-link>
             </ul>
@@ -73,7 +73,7 @@ header{
         padding: 0 8px;
         transition: .3s color ease;
         &:hover{
-            color: #1aba1a;
+            color: #21a54d;
         }
     }
     nav{
