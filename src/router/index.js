@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-
+import Login from "../views/Login";
+import Register from "../views/Register";
+import ForgotPassword from "../views/ForgotPassword";
 Vue.use(VueRouter);
 
 const routes = [
@@ -18,6 +20,30 @@ const routes = [
         component: () => import(/* webpackChunkName:"blogs" */ '../views/Blogs.vue'),
         meta: {
             title: "Blogs"
+        }
+    },
+    {
+        path: "/login",
+        name: "Login",
+        component: Login,
+        meta: {
+            title: "Login"
+        }
+    },
+    {
+        path: "/register",
+        name: "Register",
+        component: Register,
+        meta: {
+            title: "Register"
+        }
+    },
+    {
+        path: "/forgot-password",
+        name: "ForgotPassword",
+        component: ForgotPassword,
+        meta: {
+            title: "Forgot Password"
         }
     }
 ];

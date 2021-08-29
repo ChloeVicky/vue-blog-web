@@ -15,8 +15,8 @@
                     <ul>
                         <router-link class="link" :to="{name: 'Home'}">Home</router-link>
                         <router-link class="link" :to="{name: 'Blogs'}">Blogs</router-link>
-                        <router-link class="link" v-if="user" :to="{name: 'newpost'}">Post</router-link>
-                        <router-link class="link" v-if="!user" :to="{name: 'login'}">Login/Register</router-link>
+                        <router-link class="link" :to="{name: 'newpost'}">Post</router-link>
+                        <router-link class="link" :to="{name: 'Login'}">Login/Register</router-link>
                     </ul>
                 </div>
             </div>
@@ -43,7 +43,7 @@ export default {
     },
     data() {
         return{
-            user: 1
+
         }
     }
 }
