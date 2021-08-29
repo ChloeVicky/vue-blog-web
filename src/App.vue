@@ -1,19 +1,44 @@
 <template>
   <div id="app">
-    <Navigation />
+    <Navigation v-if="navigation"/>
     <router-view></router-view>
-    <Footer />
+    <Footer v-if="navigation"/>
   </div>
 </template>
 
 <script>
 import Navigation from './components/Navigation';
 import Footer from './components/Footer.vue';
+import firebase from 'firebase/app';
+import "firebase/auth";
 export default {
   name: 'App',
   components: {
     Navigation,
     Footer
+  },
+  data(){
+    return{
+      navigation: null
+    }
+  },
+  created(){
+    this.checkRoute();
+    console.log(firebase.auth().currentUser);
+  },
+  methods: {
+    checkRoute(){
+      if(this.$route.name === "Login" || this.$route.name === "Register" || this.$route.name === "ForgotPassword"){
+        this.navigation = false;
+        return;
+      }
+      this.navigation = true;
+    }
+  },
+  watch: {
+    $route(){
+      this.checkRoute();
+    }
   }
 }
 </script>
@@ -125,5 +150,11 @@ button, .router-button{
       grid-template-columns: repeat(4, 1fr);
     }
   }
+}
+
+.error{
+  text-align: center;
+  font-size: 12px;
+  color: red;
 }
 </style>
